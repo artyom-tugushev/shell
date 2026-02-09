@@ -4,14 +4,16 @@
 
 read -rp "username: " username
 
-if [[ -z "$username" ]]; then
+if [ -z "$username" ]
+then
     echo "username cannot be empty"
     exit 1
 fi
 
 shell=$(grep "^$username:" /etc/passwd | cut -d: -f7)
 
-if [[ -n "$shell" ]]; then
+if [ -n "$shell" ]
+then
     echo "$shell"
 else
     echo "User '$username' not found"
