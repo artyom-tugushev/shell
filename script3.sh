@@ -8,7 +8,7 @@ read -rp "username: " user
 
 uid=$(id -u "$user")
 home=$(getent passwd "$user" | cut -d: -f6)
-groups=$(id -Gn "$user" 2>/dev/null)
+groups=$(id -Gn "$user")
 
 echo "Current info for '$user':"
 echo "  UID:        $uid"
